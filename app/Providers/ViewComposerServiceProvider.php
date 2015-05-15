@@ -9,6 +9,7 @@ class ViewComposerServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
+	//this is to add the latest recipe in the nav bar(removed for timebeing in the UI)
 	public function boot()
 	{
 		//

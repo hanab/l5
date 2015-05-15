@@ -12,24 +12,16 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+		//this is to add the latest recipe in the nav bar(removed for timebeing in the UI)
 		view()->composer('partials.nav', function($view)
 
         {
+        	$view->with('latest',Recipe::latest()->first());
 
-           $view->with('latest',Recipe::latest()->first());
         });
 	}
 
-	/**
-	 * Register any application services.
-	 *
-	 * This service provider is a great spot to register your various container
-	 * bindings with the application. As you can see, we are registering our
-	 * "Registrar" implementation here. You can add your own bindings too!
-	 *
-	 * @return void
-	 */
+	
 	public function register()
 	{
 		$this->app->bind(

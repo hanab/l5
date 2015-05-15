@@ -4,13 +4,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ingredient extends Model {
 
-protected $fillable = array('name');
-	//
-public function recipes()
-{
+
+  //the name field must be field to submite the form
+    protected $fillable = array('name');
+
+  //one ingredient can exist in many recipes
+  public function recipes()
+  {  
 
 
-return $this->belongsToMany('App\Recipe');
+    return $this->belongsToMany('App\Recipe');
 
-}
+   }
 }

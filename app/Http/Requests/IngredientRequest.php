@@ -12,6 +12,7 @@ class IngredientRequest extends Request {
 	public function authorize()
 	{
 		return true;
+		
 	}
 
 	/**
@@ -24,8 +25,7 @@ class IngredientRequest extends Request {
 	  return [
 	     'name' => 'required',
          
-         
-		];
+         ];
 	}
 
 }

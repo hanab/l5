@@ -17,11 +17,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $table = 'users';
 
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
+	//these fields should be field to validate the form
 	protected $fillable = ['name', 'email', 'password'];
 
 	/**
@@ -31,7 +27,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
-
+    //a user can have many recipes
 	public function recipes()
 	{
       return $this->hasMany('App\Recipe');

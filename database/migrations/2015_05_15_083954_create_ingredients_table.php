@@ -10,6 +10,7 @@ class CreateIngredientsTable extends Migration {
 	 *
 	 * @return void
 	 */
+	//create ingredients and pivote table
 	public function up()
 	{
 		Schema::create('ingredients', function(Blueprint $table)

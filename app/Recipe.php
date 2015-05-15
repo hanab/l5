@@ -4,34 +4,33 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recipe extends Model {
 
-	//
+	
 
-
-    protected $fillable = array('title', 'description','user_id');
+   //this fields should be field to validate the form
+   protected $fillable = array('title', 'description','user_id');
     
-public function user()
-{
+    //user is one to many related to recipe
+   public function user()
+   {
 
-return $this->belongsTo('App\User');
+     return $this->belongsTo('App\User');
 
-}
+   }
+ 
+   //a recipe can contain many ingredients
+   public function ingredients()
+   {
+    return $this->belongsToMany('App\Ingredient')->withTimestamps();
 
-public function ingredients()
-{
+   }
 
+    //get the list of ids for ingredients
+   public function getIngredientListAttribute()
+   {
 
-return $this->belongsToMany('App\Ingredient')->withTimestamps();
+    return $this->ingredients->lists('id');
 
-}
-public function getIngredientListAttribute()
-{
+   }
 
-return $this->ingredients->lists('id');
-
-}
-// public function Picture(){
-//             return unserialize($this->picture);
-//         return $picture = array();
-//     }
 
 }

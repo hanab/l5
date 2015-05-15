@@ -10,6 +10,7 @@ class CreateRecipesTable extends Migration {
 	 *
 	 * @return void
 	 */
+	//create a user table with title,description and a foriegn key from users table
 	public function up()
 	{
 		Schema::create('recipes', function(Blueprint $table)
