@@ -17,8 +17,14 @@ class AuthController extends Controller {
 	| a simple trait to add these behaviors. Why don't you explore it?
 	|
 	*/
+	//protected $redirectTo = '/recipe'; 
 
 	use AuthenticatesAndRegistersUsers;
+
+
+    protected $redirectTo = '/recipe'; 
+
+
 
 	/**
 	 * Create a new authentication controller instance.

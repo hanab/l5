@@ -23,8 +23,16 @@ class RouteServiceProvider extends ServiceProvider {
 	public function boot(Router $router)
 	{
 		parent::boot($router);
+		 $router->model('recipe', 'App\Recipe');
+		 
+		 $router->bind('ingredients', function($name)
+         {
 
-		//
+         	return \App\Ingredient::where('name', $name)->firstOrFail();
+         }
+
+		 );
+         
 	}
 
 	/**

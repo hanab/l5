@@ -31,4 +31,18 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+
+	public function recipes()
+	{
+      return $this->hasMany('App\Recipe');
+
+
+	}
+
+	 public function isAdmin()
+	 {
+
+	 	return false;
+	 }
+
 }
