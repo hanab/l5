@@ -76,7 +76,7 @@ class RecipesController extends Controller {
 	//update a give recipe after editing
 	public function update(Recipe $recipe, RecipeRequest $request)
 	{
-		
+		$recipe->update($request->all());
 		$this->syncIngredients($recipe,$request->input('ingredient_list'));
 		
 		return redirect('recipe');
